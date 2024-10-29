@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(270deg, #ffcccb, #ff69b4, #ffcccb);
+    background-size: 600% 600%;
+    animation: gradientAnimation 15s ease infinite;
+    display: flex;
+    flex-direction: column; /* Mengatur arah flex untuk menampung header, konten, dan footer */
+    min-height: 100vh; /* Menggunakan min-height untuk memastikan footer tetap di bawah */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Font yang lebih ramah */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Gaya umum untuk navbar */
+header {
+    background-color: #ff69b4; /* Warna latar belakang navbar */
+    padding: 10px 20px; /* Menambahkan padding kiri dan kanan */
+    position: sticky; /* Membuat header tetap terlihat saat di-scroll */
+    top: 0; /* Menempatkan header di bagian atas */
+    z-index: 1000; /* Memastikan header tetap di atas konten lainnya */
+    display: flex; /* Menggunakan flexbox untuk layout */
+    justify-content: flex-end; /* Menempatkan konten di sebelah kanan */
+}
+
+nav ul {
+    list-style-type: none; /* Menghapus bullet point */
+    padding: 0;
+    display: flex; /* Menyusun tautan secara horizontal */
+}
+
+nav ul li {
+    margin: 0 15px; /* Jarak antar item navbar */
+}
+
+nav ul li a {
+    text-decoration: none; /* Menghapus garis bawah */
+    color: white; /* Warna teks tautan */
+    font-weight: bold; /* Menebalkan teks tautan */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Menambahkan garis bawah saat hover */
+}
+
+/* Gaya untuk kontainer */
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Membuat latar belakang transparan */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s; /* Animasi muncul */
+    max-width: 90%; /* Maksimal lebar kontainer */
+    width: 400px; /* Lebar tetap untuk desktop */
+    margin: 20px auto; /* Mengatur margin untuk pusat secara horizontal */
+    flex-grow: 1; /* Membiarkan kontainer tumbuh mengisi ruang yang tersedia */
+    display: flex; /* Menyusun konten di dalam kontainer */
+    flex-direction: column; /* Mengatur arah konten vertikal */
+    justify-content: center; /* Mengatur konten di tengah */
+    align-items: center; /* Mengatur konten di tengah secara horizontal */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.heart-image {
+    width: 100px; /* Ukuran gambar hati */
+    margin-bottom: 20px; /* Jarak bawah dari gambar */
+}
+
+h1 {
+    color: #ff69b4; /* Warna judul pink cerah */
+}
+
+p {
+    color: #555; /* Warna teks informasi */
+    margin-bottom: 20px;
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+    font-weight: bold; /* Menebalkan teks label */
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    border: 2px solid #ff69b4; /* Border input */
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff69b4; /* Warna tombol pink */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transisi warna saat hover */
+}
+
+button:hover {
+    background-color: #ff1493; /* Warna tombol saat hover */
+}
+
+#thankYouMessage {
+    margin-top: 20px;
+    color: #ff69b4; /* Warna pesan terima kasih */
+    font-weight: bold; /* Menebalkan pesan terima kasih */
+}
+
+/* Gaya untuk footer */
+footer {
+    background-color: #ff1493;; /* Warna latar belakang footer */
+    text-align: center;
+    padding: 10px 0;
+    position: relative; /* Posisi footer */
+    bottom: 0; /* Memastikan footer berada di bawah */
+    width: 100%; /* Memastikan footer mengambil lebar penuh */
+}
+
+footer p {
+    margin: 0; /* Menghapus margin */
+    color: white; /* Warna teks footer */
+}
+
+/* Media Queries untuk responsivitas */
+@media (max-width: 600px) {
+    .container {
+        width: 90%; /* Kontainer menjadi lebih lebar di layar kecil */
+    }
+
+    .heart-image {
+        width: 80px; /* Ukuran gambar hati lebih kecil di layar kecil */
+    }
+
+    h1 {
+        font-size: 24px; /* Mengurangi ukuran font judul */
+    }
+
+    p {
+        font-size: 16px; /* Mengurangi ukuran font paragraf */
+    }
+
+    input[type="text"] {
+        width: 100%; /* Mengatur input untuk mengisi lebar penuh */
+    }
+
+    button {
+        width: 100%; /* Mengatur tombol untuk mengisi lebar penuh */
+    }
+}

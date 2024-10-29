@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Thank You Page</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <img src="music/4752733acead422b25a41d277dc24d5a-removebg-preview.png" alt="Love" class="heart-image">
+        <h1>Selamat Datang!</h1>
+        <p>Masukkan nama Anda di bawah ini dan dapatkan ucapan terima kasih yang spesial!</p>
+        <form id="nameForm">
+            <label for="name">Nama Anda:</label>
+            <input type="text" id="name" required placeholder="Contoh: John Doe">
+            <button type="submit">Kirim</button>
+        </form>
+        <h2 id="thankYouMessage"></h2>
+        <button id="loveMessageButton" style="display:none;">Tampilkan Ucapan Cinta</button>
+        <audio id="backgroundMusic" src="music/audio.m4a" preload="auto"></audio> <!-- Ganti dengan path musik Anda -->
+    </div>
+
+    <footer>
+        <p>© 2024 Samsul Arifin. 
+            <a href="https://github.com/samsulchin" target="_blank" id="githubLink">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="samsulchin" style="width: 20px; vertical-align: middle;"> Samsulchin
+            </a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
