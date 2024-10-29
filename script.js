@@ -10,7 +10,7 @@ document.getElementById('nameForm').addEventListener('submit', function(event) {
 
 Seiring berjalannya waktu, aku semakin menyadari betapa besar pengaruhmu dalam hidupku 💖. Di saat-saat sulit, kamu hadir dengan ketenangan yang menguatkan 🛡️, seakan menghadirkan pelindung yang selalu siap siaga di sisiku 🤍. Dan di setiap momen bahagia, kamu adalah orang pertama yang ingin aku bagi cerita dan tawa 😂. Kehadiranmu memberikan warna dan arti tersendiri dalam setiap aspek kehidupan 🎨, membuat segalanya terasa lebih ringan dan menyenangkan 🌈. Terima kasih telah menjadi pendamping selama ini, selalu mendukung, dan memberi motivasi dan semangat untuk terus berusaha menjadi versi terbaik dari diriku 🏆.
 
-Semoga perjalanan kita ke depan selalu diberi kemudahan dan kelancaran dalam menjalani studi S1 ini ✨. Aku berharap kita bisa terus tumbuh bersama, saling mendukung dengan rasa yang semakin matang dan dewasa 🌿. Mari kita ciptakan lebih banyak kenangan indah, berbagi suka dan duka, dan menghadapi masa depan dengan penuh harapan dan keyakinan 🌄. salam dari mas samsul`; 
+Semoga perjalanan kita ke depan selalu diberi kemudahan dan kelancaran dalam menjalani studi S1 ini ✨. Aku berharap kita bisa terus tumbuh bersama, saling mendukung dengan rasa yang semakin matang dan dewasa 🌿. Mari kita ciptakan lebih banyak kenangan indah, berbagi suka dan duka, dan menghadapi masa depan dengan penuh harapan dan keyakinan 🌄.`; 
 
     // Memanggil fungsi untuk efek mengetik
     typeWriterEffect(thankYouMessage, message, 100); // 100 ms delay antara karakter
