@@ -13,7 +13,7 @@ Seiring berjalannya waktu, aku semakin menyadari betapa besar pengaruhmu dalam h
 Semoga perjalanan kita ke depan selalu diberi kemudahan dan kelancaran dalam menjalani studi S1 ini ✨. Aku berharap kita bisa terus tumbuh bersama, saling mendukung dengan rasa yang semakin matang dan dewasa 🌿. Mari kita ciptakan lebih banyak kenangan indah, berbagi suka dan duka, dan menghadapi masa depan dengan penuh harapan dan keyakinan 🌄.`; 
 
     // Memanggil fungsi untuk efek mengetik
-    typeWriterEffect(thankYouMessage, message, 100); // 100 ms delay antara karakter
+    typeWriterEffect(thankYouMessage, message, 50); // 100 ms delay antara karakter
 
     // Memutar musik
     backgroundMusic.play(); // Memutar musik
