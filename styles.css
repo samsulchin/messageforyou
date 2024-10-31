@@ -165,3 +165,28 @@ footer p {
         width: 100%; /* Mengatur tombol untuk mengisi lebar penuh */
     }
 }
+.heart-image {
+    width: 100px; /* Ukuran gambar hati */
+    margin-bottom: 20px; /* Jarak bawah dari gambar */
+    animation: heartbeat 1s infinite, float 3s ease-in-out infinite; /* Animasi berdetak dan mengambang */
+}
+
+/* Efek animasi berdetak */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Membuat gambar membesar pada 50% dari ukuran */
+    }
+}
+
+/* Efek animasi mengambang */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Menggerakkan gambar ke atas */
+    }
+}
