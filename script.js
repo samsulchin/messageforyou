@@ -1,82 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Romantic Message</title>
-    <style>
-        /* Menambahkan gaya justify untuk konten pesan */
-        #thankYouMessage {
-            text-align: justify;
-            width: 80%; /* Optional: atur lebar agar terlihat lebih rapi */
-            margin: auto; /* Optional: membuat elemen berada di tengah */
-        }
-    </style>
-</head>
-<body>
-    <form id="nameForm">
-        <input type="text" id="name" placeholder="Enter your name" required>
-        <button type="submit">Submit</button>
-    </form>
-    <div id="thankYouMessage"></div>
-    <audio id="backgroundMusic" src="path/to/your/music.mp3"></audio>
-    <button id="loveMessageButton" style="display: none;">Love Message</button>
+document.getElementById('nameForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Mencegah form dari pengiriman biasa
 
-    <script>
-        document.getElementById('nameForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+    const nameInput = document.getElementById('name').value; // Mengambil nilai input
+    const thankYouMessage = document.getElementById('thankYouMessage');
+    const backgroundMusic = document.getElementById('backgroundMusic'); // Mengambil elemen audio
 
-            const nameInput = document.getElementById('name').value;
-            const thankYouMessage = document.getElementById('thankYouMessage');
-            const backgroundMusic = document.getElementById('backgroundMusic');
+    // Kalimat romantis dengan paragraf terpisah dan emoji
+    const message = `${nameInput}, izinkan Mas menyampaikan rasa syukur yang mendalam atas kehadiranmu ❤️. Dari awal aku kenal hingga hari ini, kamu selalu hadir sebagai salah satu sosok yang BAIK, Positif🤗. Kebersamaan kita telah banyak mengajarkan arti saling mendukung 💪, dan aku merasakan betul bagaimana kita tumbuh dan semakin dewasa bersama 🌱. Setiap langkah dan momen yang kita lalui seolah memperkuat ikatan dan saling pengertian yang semakin dalam 🤝.
 
-            const message = `${nameInput}, izinkan Mas menyampaikan rasa syukur yang mendalam atas kehadiranmu ❤️...` ; 
+Seiring berjalannya waktu, aku semakin menyadari betapa besar pengaruhmu dalam hidupku 💖. Di saat-saat sulit, kamu hadir dengan ketenangan yang menguatkan 🛡️, seakan menghadirkan pelindung yang selalu siap siaga di sisiku 🤍. Dan di setiap momen bahagia, kamu adalah orang pertama yang ingin aku bagi cerita dan tawa 😂. Kehadiranmu memberikan warna dan arti tersendiri dalam setiap aspek kehidupan 🎨, membuat segalanya terasa lebih ringan dan menyenangkan 🌈. Terima kasih telah menjadi pendamping selama ini, selalu mendukung, dan memberi motivasi dan semangat untuk terus berusaha menjadi versi terbaik dari diriku 🏆.
 
-            typeWriterEffect(thankYouMessage, message, 50);
-            backgroundMusic.play();
-        });
+Semoga perjalanan kita ke depan selalu diberi kemudahan dan kelancaran dalam menjalani studi S1 ini ✨. Aku berharap kita bisa terus tumbuh bersama, saling mendukung dengan rasa yang semakin matang dan dewasa 🌿. Mari kita ciptakan lebih banyak kenangan indah, berbagi suka dan duka, dan menghadapi masa depan dengan penuh harapan dan keyakinan 🌄. salam dari mas samsul`; 
 
-        function typeWriterEffect(element, text, delay) {
-            element.innerHTML = "";
-            const paragraphs = text.split('\n\n');
+    // Memanggil fungsi untuk efek mengetik
+    typeWriterEffect(thankYouMessage, message, 100); // 100 ms delay antara karakter
 
-            let paragraphIndex = 0;
-            let charIndex = 0;
+    // Memutar musik
+    backgroundMusic.play(); // Memutar musik
+});
 
-            function type() {
-                if (paragraphIndex < paragraphs.length) {
-                    if (charIndex === 0) {
-                        const p = document.createElement('p');
-                        element.appendChild(p);
-                    }
+// Fungsi untuk efek mengetik dengan paragraf terpisah
+function typeWriterEffect(element, text, delay) {
+    element.innerHTML = ""; // Mengosongkan konten sebelumnya
+    const paragraphs = text.split('\n\n'); // Membagi teks menjadi paragraf
 
-                    const currentParagraph = element.getElementsByTagName('p')[paragraphIndex];
-                    const currentText = paragraphs[paragraphIndex];
+    let paragraphIndex = 0;
+    let charIndex = 0;
 
-                    if (charIndex < currentText.length) {
-                        currentParagraph.textContent += currentText.charAt(charIndex);
-                        charIndex++;
-                        currentParagraph.scrollIntoView({ behavior: 'smooth', block: 'end' });
-
-                        setTimeout(type, delay);
-                    } else {
-                        charIndex = 0;
-                        paragraphIndex++;
-                        setTimeout(type, delay);
-                    }
-                } else {
-                    document.getElementById('loveMessageButton').style.display = 'inline-block';
-                }
+    function type() {
+        if (paragraphIndex < paragraphs.length) {
+            // Jika paragraf baru, buat elemen <p> baru
+            if (charIndex === 0) {
+                const p = document.createElement('p');
+                element.appendChild(p);
             }
 
-            type();
-        }
+            const currentParagraph = element.getElementsByTagName('p')[paragraphIndex];
+            const currentText = paragraphs[paragraphIndex];
 
-        document.getElementById('loveMessageButton').addEventListener('click', function() {
-            const name = document.getElementById('name').value;
-            const loveMessage = `I love you, ${name}!`;
-            alert(loveMessage);
-        });
-    </script>
-</body>
-</html>
+            // Mengetik karakter dalam paragraf
+            if (charIndex < currentText.length) {
+                currentParagraph.textContent += currentText.charAt(charIndex);
+                charIndex++;
+
+                // Scroll ke elemen yang sedang diketik
+                currentParagraph.scrollIntoView({ behavior: 'smooth', block: 'end' });
+
+                setTimeout(type, delay); // Memanggil fungsi ini lagi setelah delay
+            } else {
+                // Pindah ke paragraf berikutnya
+                charIndex = 0;
+                paragraphIndex++;
+                setTimeout(type, delay); // Memanggil fungsi ini lagi untuk paragraf baru
+            }
+        } else {
+            // Tampilkan tombol setelah selesai mengetik
+            document.getElementById('loveMessageButton').style.display = 'inline-block'; 
+        }
+    }
+
+    type(); // Memulai efek mengetik
+}
+
+// Event listener untuk tombol ucapan cinta
+document.getElementById('loveMessageButton').addEventListener('click', function() {
+    const name = document.getElementById('name').value;
+    const loveMessage = `I love you, ${name}!`;
+    alert(loveMessage); // Tampilkan ucapan cinta
+});
